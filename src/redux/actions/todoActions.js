@@ -1,7 +1,7 @@
 import { FETCH_TODOS, FETCH_TODOS_BY_USERID, NEW_TODO, EDIT_TODO, DELETE_TODO} from "./types";
 
 export const fetchTodos = () => dispatch => {
-    fetch('http://localhost:8080/api/v1/todos')
+    fetch('https://raphaeltodo.herokuapp.com/api/v1/todos')
     .then(res => res.json())
     .then(todos => dispatch({
         type: FETCH_TODOS,
@@ -10,7 +10,7 @@ export const fetchTodos = () => dispatch => {
 }
 
 export const fetchTodosByUserId = (userId) => dispatch => {
-    fetch(`http://localhost:8080/api/v1/todos/${userId}`)
+    fetch(`https://raphaeltodo.herokuapp.com/api/v1/todos/${userId}`)
     .then(res => res.json())
     .then(todosUser => dispatch({
         type: FETCH_TODOS_BY_USERID,
@@ -20,7 +20,7 @@ export const fetchTodosByUserId = (userId) => dispatch => {
 
 export const createTodo = (history, todoData) => dispatch => {
     console.log(todoData);
-    fetch('http://localhost:8080/api/v1/todos', {
+    fetch('https://raphaeltodo.herokuapp.com/api/v1/todos', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,7 +57,7 @@ export const editTodo = (history, todoData) => dispatch => {
 }
 
 export const deleteTodo = (history, todo) => dispatch => {
-    fetch(`http://localhost:8080/api/v1/todos/${todo[0].id}`, {
+    fetch(`https://raphaeltodo.herokuapp.com/api/v1/todos/${todo[0].id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'

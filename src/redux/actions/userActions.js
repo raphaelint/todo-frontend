@@ -1,7 +1,7 @@
 import { FETCH_USERS, NEW_USER, EDIT_USER, FETCH_SINGLE_USERS, DELETE_USER } from "./types";
 
 export const fetchUsers = () => dispatch => {
-    fetch('http://localhost:8080/api/v1/users')
+    fetch('https://raphaeltodo.herokuapp.com/api/v1/users')
     .then(res => res.json())
     .then(users => dispatch({
         type: FETCH_USERS,
@@ -10,7 +10,7 @@ export const fetchUsers = () => dispatch => {
 }
 
 export const fetchSingleUser = (userId) => dispatch => {
-    fetch(`http://localhost:8080/api/v1//users/${userId}`)
+    fetch(`https://raphaeltodo.herokuapp.com/api/v1//users/${userId}`)
     .then(res => res.json())
     .then(user => dispatch({
         type: FETCH_SINGLE_USERS,
@@ -19,7 +19,7 @@ export const fetchSingleUser = (userId) => dispatch => {
 }
 
 export const createUser = (history, userData) => dispatch => {
-    fetch('http://localhost:8080/api/v1//users', {
+    fetch('https://raphaeltodo.herokuapp.com/api/v1//users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ export const createUser = (history, userData) => dispatch => {
 }
 
 export const editUser = (history, userData) => dispatch => {
-    fetch(`http://localhost:8080/api/v1//users/${userData.id}`, {
+    fetch(`https://raphaeltodo.herokuapp.com/api/v1//users/${userData.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -56,7 +56,7 @@ export const editUser = (history, userData) => dispatch => {
 }
 
 export const deleteUser = (history, user) => dispatch => {
-    fetch(`http://localhost:8080/api/v1//users/${user.id}`, {
+    fetch(`https://raphaeltodo.herokuapp.com/api/v1//users/${user.id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
