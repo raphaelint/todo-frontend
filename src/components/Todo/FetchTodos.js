@@ -44,9 +44,9 @@ class FetchTodos extends Component {
                 <table class="table table-striped">
                 <thead>
                     <tr>
-                    <th>Title</th>
+                    <th>Description</th>
                     <th>User</th>
-                    <th>Completed</th>
+                    <th>State</th>
                     <th>Actions</th>
                     </tr>
                 </thead>
